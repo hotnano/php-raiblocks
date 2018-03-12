@@ -1,21 +1,32 @@
 <?php
 
-namespace dansup\RaiBlocks;
+namespace HotNano\RaiBlocks;
 
 use \Zttp\Zttp;
 
 class Server
 {
-    use Action\Account, 
-    Action\Block, 
-    Action\Frontiers, 
-    Action\Util;
+    use Action\Account,
+        Action\Block,
+        Action\Frontiers,
+        Action\Util;
 
+    /**
+     * @var string
+     */
     protected $host;
+
+    /**
+     * @var int
+     */
     protected $port;
+
+    /**
+     * @var array
+     */
     protected $params;
 
-    public function __construct($host = '[::1]', $port = 7076)
+    public function __construct(string $host = '[::1]', int $port = 7076)
     {
         $this->host = $host;
         $this->port = $port;
@@ -37,6 +48,4 @@ class Server
     {
         return Zttp::asJson()->post($this->url, $this->params)->json();
     }
-
-
 }

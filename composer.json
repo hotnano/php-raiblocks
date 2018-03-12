@@ -1,14 +1,13 @@
 {
-    "name": "dansup/php-raiblocks",
+    "name": "hotnano/php-raiblocks",
     "type": "library",
-    "description": "PHP RaiBlocks RPC Library",
+    "description": "Advanced PHP RaiBlocks/Nano RPC Library. Fork from dansup/php-raiblocks.",
     "keywords": [
-        "dansup",
-        "php-raiblocks",
+        "nano", "nanocoin",
         "raiblocks",
-        "cryptocurrency"
+        "cryptocurrency", "coin"
     ],
-    "homepage": "https://github.com/dansup/php-raiblocks",
+    "homepage": "https://github.com/hotnano/php-raiblocks",
     "license": "MIT",
     "authors": [
         {
@@ -16,34 +15,26 @@
             "email": "danielsupernault@gmail.com",
             "homepage": "https://github.com/dansup",
             "role": "Developer"
+        },
+        {
+            "name": "Mr. Nano",
+            "email": "nanocoinio@gmail.com",
+            "homepage": "https://github.com/HotNanoCoin",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php" : "~5.6|~7.0",
+        "php" : "^7.2",
         "kitetail/zttp" : "0.3.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit" : ">=5.4.3",
-        "squizlabs/php_codesniffer": "^2.3"
     },
     "autoload": {
         "psr-4": {
-            "dansup\\RaiBlocks\\": "src"
+            "HotNano\\RaiBlocks\\": "src"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "dansup\\RaiBlocks\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "phpunit",
-        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
-        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "1.0.0-dev"
         }
     },
     "config": {
