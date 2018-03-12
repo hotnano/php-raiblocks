@@ -2,14 +2,16 @@
 
 namespace HotNano\RaiBlocks;
 
-use \Zttp\Zttp;
+use HotNano\RaiBlocks\Action\Account;
+use HotNano\RaiBlocks\Action\Block;
+use HotNano\RaiBlocks\Action\Frontiers;
+use HotNano\RaiBlocks\Action\Util;
+use HotNano\RaiBlocks\Action\Wallet;
+use Zttp\Zttp;
 
 class Server
 {
-    use Action\Account,
-        Action\Block,
-        Action\Frontiers,
-        Action\Util;
+    use Account, Block, Frontiers, Util, Wallet;
 
     /**
      * @var string
