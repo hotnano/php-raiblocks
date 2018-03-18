@@ -4,7 +4,7 @@ namespace HotNano\RaiBlocks\Action;
 
 trait Account
 {
-    public function accountBalance(?string $account = null)
+    public function accountBalance(string $account)
     {
         $this->params = [
             'action' => 'account_balance',
@@ -23,7 +23,7 @@ trait Account
     }
 
     public function accountInfo(
-        ?string $account = null,
+        string $account,
         bool $representative = false,
         bool $weight = false,
         bool $pending = false
@@ -38,8 +38,13 @@ trait Account
         return $this;
     }
 
-    public function accountCreate(?string $wallet = null,bool $work = true)
+    public function accountCreate(string $wallet)
     {
+        $this->params = [
+            'action' => 'account_create',
+            'wallet' => $wallet,
+        ];
+        return $this;
     }
 
     public function accountGet(?string $key = null)
@@ -51,13 +56,17 @@ trait Account
         return $this;
     }
 
-    public function accountHistory(?string $account = null, int $count = 1)
+    public function accountHistory(string $account, ?string $head = null, int $offset = 0, int $count = 1)
     {
         $this->params = [
             'action' => 'account_history',
             'account' => $account,
+            'offset' => $offset,
             'count' => $count,
         ];
+        if (null !== $head) {
+            $this->params['head'] = $head;
+        }
         return $this;
     }
 

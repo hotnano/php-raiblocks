@@ -5,13 +5,14 @@ namespace HotNano\RaiBlocks;
 use HotNano\RaiBlocks\Action\Account;
 use HotNano\RaiBlocks\Action\Block;
 use HotNano\RaiBlocks\Action\Frontiers;
+use HotNano\RaiBlocks\Action\Sending;
 use HotNano\RaiBlocks\Action\Util;
 use HotNano\RaiBlocks\Action\Wallet;
 use Zttp\Zttp;
 
 class Server
 {
-    use Account, Block, Frontiers, Util, Wallet;
+    use Account, Block, Frontiers, Sending, Util, Wallet;
 
     /**
      * @var string
